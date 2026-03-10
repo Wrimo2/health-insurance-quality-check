@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance QC Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+
+            <!-- Left: title + summary pills -->
+            <div class="header-left">
+                <h1>Health Insurance Data Quality Control</h1>
+                <div class="summary-bar">
+                    <div class="summary-item total">
+                        <span class="summary-label">Total Checks</span>
+                        <span class="summary-value" id="total-count">--</span>
+                    </div>
+                    <div class="summary-item pass">
+                        <span class="summary-label">Passed</span>
+                        <span class="summary-value" id="pass-count">--</span>
+                    </div>
+                    <div class="summary-item fail">
+                        <span class="summary-label">Failed</span>
+                        <span class="summary-value" id="fail-count">--</span>
+                    </div>
+                    <div class="summary-item status" id="overall-status">
+                        <span class="summary-label">Overall</span>
+                        <span class="summary-value" id="overall-value">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: QC Pass Rate gauge -->
+            <div class="pass-rate-widget" id="pass-rate-widget">
+                <div class="pass-rate-label">QC Pass Rate</div>
+                <div class="gauge-wrap">
+                    <svg class="gauge-svg" viewBox="0 0 120 120">
+                        <!-- Background track -->
+                        <circle class="gauge-track" cx="60" cy="60" r="48"/>
+                        <!-- Foreground progress ring -->
+                        <circle class="gauge-ring" id="gauge-ring" cx="60" cy="60" r="48"/>
+                    </svg>
+                    <div class="gauge-center">
+                        <span class="gauge-percent" id="gauge-percent">--%</span>
+                    </div>
+                </div>
+                <div class="pass-rate-status" id="pass-rate-status"></div>
+            </div>
+
+        </div>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab active" data-category="all">All</button>
+        <button class="tab" data-category="Null Check">Null</button>
+        <button class="tab" data-category="Range Check">Range</button>
+        <button class="tab" data-category="Enum Check">Enum</button>
+        <button class="tab" data-category="REGEXP Check">REGEXP</button>
+        <button class="tab" data-category="Duplicate Check">Duplicate</button>
+        <button class="tab" data-category="Date Check">Date</button>
+        <button class="tab" data-category="JOIN Check">JOIN</button>
+    </nav>
+
+    <main class="card-grid" id="card-grid">
+        <p class="loading" id="loading">Loading QC results...</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
