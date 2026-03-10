@@ -7,7 +7,7 @@ A full-stack Data Quality Control (QC) system for a health insurance database. D
 | Layer | Technology | Role |
 |-------|-----------|------|
 | Database | MySQL 8.0 | Store data, run validation queries |
-| Backend | Python 3.x + Flask | Connect to DB, run checks, serve JSON API |
+| Backend | Python 3.12.3 + Flask | Connect to DB, run checks, serve JSON API |
 | Frontend | HTML + CSS + JavaScript | Fetch API results, render QC dashboard |
 | Connector | mysql-connector-python | Python-to-MySQL bridge |
 
