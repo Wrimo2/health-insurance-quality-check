@@ -19,14 +19,14 @@ health-insurance-qc/
 ├── sql/
 │   ├── schema.sql          # CREATE TABLE statements + FK constraints
 │   ├── seed.sql            # INSERT rows with intentional dirty data
-│   └── checks.sql          # 20-25 QC validation queries
+│   └── checks.sql          # 26 QC validation queries
 │
 ├── app.py                  # Flask app: runs queries, serves /api/results
 │
 └── dashboard/
     ├── index.html           # QC dashboard UI
     ├── style.css            # Styling for report cards
-    └── script.js            # Fetch API + render results
+    └── script.js            # interactivity + Fetch API + render results
 ```
 
 ## System Architecture
