@@ -254,14 +254,3 @@ SELECT c.claim_id, c.claim_amount, p.coverage_amount
 FROM claims c
 JOIN policies p ON c.policy_id = p.policy_id
 WHERE c.claim_amount > p.coverage_amount;
-
-
--- JN-05: Claim amount exceeds coverage
--- check_id: JN-05
--- name: Claim amount exceeds coverage
--- category: JOIN Check
-
-SELECT c.claim_id, c.claim_amount, p.coverage_amount
-FROM claims c
-JOIN policies p ON c.policy_id = p.policy_id
-WHERE c.claim_amount > p.coverage_amount;
